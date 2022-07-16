@@ -66,7 +66,7 @@ export const getTokensOwnerFromContractAddress = async (
     const response: any = await moralisApi.get(formulateUrl);
     const nextCursor = response.data.cursor as string;
     const listOfTokensMetadata = response.data.result;
-    const listOfTokenOwners = [];
+    const listOfTokenOwners: string[] = [];
     for (let i = 0; i < listOfTokensMetadata.length; i++) {
       listOfTokenOwners.push(listOfTokensMetadata[i].owner_of);
     }
